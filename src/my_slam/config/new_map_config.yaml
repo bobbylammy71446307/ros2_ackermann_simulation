@@ -9,8 +9,8 @@ amcl:
     base_frame_id: "base_link"
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
-    beam_skip_threshold: 0.3
-    do_beamskip: false
+    beam_skip_threshold: 0.5
+    do_beamskip: true
     global_frame_id: "map"
     lambda_short: 0.1
     laser_likelihood_max_dist: 2.0
@@ -39,8 +39,8 @@ amcl:
     always_reset_initial_pose: false
     first_map_only: false
     initial_pose:
-      x: -6.0
-      y: -1.0
+      x: -5.33
+      y: 1.4
       z: 0.0
       yaw: 0.0
 
@@ -149,7 +149,7 @@ controller_server:
       transform_tolerance: 0.1
       temperature: 0.3
       gamma: 0.015
-      motion_model: "DiffDrive"
+      motion_model: "Ackermann"
       visualize: false
       reset_period: 1.0 # (only in Humble)
       regenerate_noises: false
@@ -178,17 +178,17 @@ controller_server:
         cost_power: 1
         cost_weight: 5.0
         threshold_to_consider: 0.5
-      # ObstaclesCritic:
-      #   enabled: true
-      #   cost_power: 1
-      #   repulsion_weight: 1.5
-      #   critical_weight: 20.0
-      #   consider_footprint: false
-      #   collision_cost: 10000.0
-      #   collision_margin_distance: 0.1
-      #   near_goal_distance: 0.5
-      #   inflation_radius: 0.55 # (only in Humble)
-      #   cost_scaling_factor: 10.0 # (only in Humble)
+      ObstaclesCritic:
+        enabled: true
+        cost_power: 1
+        repulsion_weight: 1.5
+        critical_weight: 20.0
+        consider_footprint: true
+        collision_cost: 10000.0
+        collision_margin_distance: 0.1
+        near_goal_distance: 0.5
+        inflation_radius: 0.55 # (only in Humble)
+        cost_scaling_factor: 10.0 # (only in Humble)
       CostCritic:
         enabled: true
         cost_power: 1
@@ -247,6 +247,7 @@ global_costmap:
       use_sim_time: True
       robot_radius: 0.8 # radius set and used, so no footprint points
       resolution: 0.05
+      footprint: "[ [0.6, 0.6], [0.6, -0.6], [-0.6, -0.6], [-0.6, 0.6] ]"
       plugins: ["static_layer", "obstacle_layer","inflation_layer"]
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
@@ -276,7 +277,7 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         enabled: true
-        inflation_radius: 0.55
+        inflation_radius: 1.3
         cost_scaling_factor: 1.0
         inflate_unknown: false
         inflate_around_unknown: true
@@ -286,21 +287,23 @@ global_costmap:
 local_costmap:
   local_costmap:
     ros__parameters:
-      update_frequency: 5.0
-      publish_frequency: 2.0
+      update_frequency: 15.0
+      publish_frequency: 10.0
+      footprint_padding: 0.5
       global_frame: odom
       robot_base_frame: base_link
       use_sim_time: True
       rolling_window: True
-      width: 10
-      height: 10
+      width: 5
+      height: 5
       resolution: 0.05
+      footprint: "[ [0.6, 0.6], [0.6, -0.6], [-0.6, -0.6], [-0.6, 0.6] ]"
       plugins: ["voxel_layer", "obstacle_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         enabled: True
         cost_scaling_factor: 0.3
-        inflation_radius: 1.0
+        inflation_radius: 1.3
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
@@ -309,11 +312,11 @@ local_costmap:
         publish_voxel_map: False
         origin_z: 0.0
         z_voxels: 16
-        z_resolution: 0.2
-        unknown_threshold: 15
+        z_resolution: 0.3
+        unknown_threshold: 10
         observation_sources: pointcloud
         pointcloud:  # no frame set, uses frame from message
-          topic: /xt_lidar_points
+          topic: /xt_lidar/points
           max_obstacle_height: 2.0
           min_obstacle_height: 0.1
           obstacle_max_range: 10.0
@@ -328,8 +331,8 @@ local_costmap:
         enabled: True
         observation_sources: scan
         scan:
-          topic: /front_2d_lidar/scan
-          max_obstacle_height: 2.0
+          topic: /scan
+          max_obstacle_height: 10.0
           clearing: True
           marking: True
           data_type: "LaserScan"
@@ -355,9 +358,9 @@ planner_server:
     use_sim_time: True
 
     GridBased:
-      plugin: "nav2_smac_planner::SmacPlannerHybrid" # In Iron and older versions, "/" was used instead of "::"
-      downsample_costmap: false           # whether or not to downsample the map
-      downsampling_factor: 1              # multiplier for the resolution of the costmap layer (e.g. 2 on a 5cm costmap would be 10cm)
+      plugin: "nav2_smac_planner/SmacPlannerHybrid" # In Iron and older versions, "/" was used instead of "::"
+      downsample_costmap: True           # whether or not to downsample the map
+      downsampling_factor: 2              # multiplier for the resolution of the costmap layer (e.g. 2 on a 5cm costmap would be 10cm)
       tolerance: 0.25                     # dist-to-goal heuristic cost (distance) for valid tolerance endpoints if exact goal cannot be found.
       allow_unknown: true                 # allow traveling in unknown space
       max_iterations: 1000000             # maximum total iterations to search for before failing (in case unreachable), set to -1 to disable
@@ -412,7 +415,7 @@ behavior_server:
     costmap_topic: local_costmap/costmap_raw
     footprint_topic: local_costmap/published_footprint
     cycle_frequency: 5.0
-    behavior_plugins: ["spin", "backup", "drive_on_heading", "wait"]
+    behavior_plugins: ["spin","backup", "drive_on_heading", "wait"]
     spin:
       plugin: "nav2_behaviors/Spin"
     backup:
@@ -424,7 +427,7 @@ behavior_server:
     global_frame: odom
     robot_base_frame: base_link
     transform_tolerance: 0.2
-    use_sim_time: true
+    use_sim_time: True
     simulate_ahead_time: 2.0
     max_rotational_vel: 1.0
     min_rotational_vel: 0.4

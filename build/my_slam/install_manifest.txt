@@ -1,11 +1,7 @@
-/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/carter_navigation.launch.py
+/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/cmdvel_to_ackermann.launch.py
 /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/my_amr_navigation.launch.py
-/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/map.launch.py
+/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/slam_mapping.launch.py
 /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/new_map.launch.py
-/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/online_async_launch.py
-/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/point_cloud_to_scan.launch.py
-/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/bringup_launch.py
-/home/aimo/amr_ws/install/my_slam/share/my_slam/launch/nav2.launch.py
 /home/aimo/amr_ws/install/my_slam/share/my_slam/params/load_map.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/params/my_amr_param.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/params/carter_navigation_params.yaml
@@ -16,7 +12,6 @@
 /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/carter_navigation_namespaced.rviz
 /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/my_navigation.rviz
 /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/mapping.rviz
-/home/aimo/amr_ws/install/my_slam/share/my_slam/config/smac_planner.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/config/mapper_params_online_async.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/config/amcl.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/config/mapper_params_online_async_carter.yaml
