@@ -1,3 +1,5 @@
+/home/aimo/amr_ws/install/my_slam/share/my_slam/behavior_tree/bt_to_pose.xml
+/home/aimo/amr_ws/install/my_slam/share/my_slam/behavior_tree/bt_through_poses.xml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/cmdvel_to_ackermann.launch.py
 /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/my_amr_navigation.launch.py
 /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/slam_mapping.launch.py
@@ -16,6 +18,13 @@
 /home/aimo/amr_ws/install/my_slam/share/my_slam/config/amcl.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/config/mapper_params_online_async_carter.yaml
 /home/aimo/amr_ws/install/my_slam/share/my_slam/config/new_map_config.yaml
+/home/aimo/amr_ws/install/my_slam/share/my_slam/samples/carter_navigation.launch.py
+/home/aimo/amr_ws/install/my_slam/share/my_slam/samples/point_cloud_to_scan.launch.py
+/home/aimo/amr_ws/install/my_slam/share/my_slam/samples/bringup_launch.py
+/home/aimo/amr_ws/install/my_slam/share/my_slam/samples/nav2.launch.py
+/home/aimo/amr_ws/install/my_slam/share/my_slam/usd/amr_map.usd
+/home/aimo/amr_ws/install/my_slam/share/my_slam/usd/nova_carter.usd
+/home/aimo/amr_ws/install/my_slam/share/my_slam/usd/ackman_new.usd
 /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/package_run_dependencies/my_slam
 /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/parent_prefix_path/my_slam
 /home/aimo/amr_ws/install/my_slam/share/my_slam/environment/ament_prefix_path.sh

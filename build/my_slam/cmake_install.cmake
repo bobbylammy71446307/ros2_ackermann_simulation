@@ -44,11 +44,14 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_slam" TYPE DIRECTORY FILES
+    "/home/aimo/amr_ws/src/my_slam/behavior_tree"
     "/home/aimo/amr_ws/src/my_slam/launch"
     "/home/aimo/amr_ws/src/my_slam/params"
     "/home/aimo/amr_ws/src/my_slam/maps"
     "/home/aimo/amr_ws/src/my_slam/rviz2"
     "/home/aimo/amr_ws/src/my_slam/config"
+    "/home/aimo/amr_ws/src/my_slam/samples"
+    "/home/aimo/amr_ws/src/my_slam/usd"
     )
 endif()
 

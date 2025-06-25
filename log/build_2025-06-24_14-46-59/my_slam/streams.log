@@ -1,0 +1,74 @@
+[0.005s] Invoking command in '/home/aimo/amr_ws/build/my_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/aimo/amr_ws/src/my_slam -DCMAKE_INSTALL_PREFIX=/home/aimo/amr_ws/install/my_slam
+[0.032s] -- The C compiler identification is GNU 11.4.0
+[0.057s] -- The CXX compiler identification is GNU 11.4.0
+[0.060s] -- Detecting C compiler ABI info
+[0.094s] -- Detecting C compiler ABI info - done
+[0.097s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.097s] -- Detecting C compile features
+[0.097s] -- Detecting C compile features - done
+[0.098s] -- Detecting CXX compiler ABI info
+[0.138s] -- Detecting CXX compiler ABI info - done
+[0.141s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.141s] -- Detecting CXX compile features
+[0.141s] -- Detecting CXX compile features - done
+[0.142s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.212s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.277s] -- Configuring done
+[0.278s] -- Generating done
+[0.279s] -- Build files have been written to: /home/aimo/amr_ws/build/my_slam
+[0.282s] Invoked command in '/home/aimo/amr_ws/build/my_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/aimo/amr_ws/src/my_slam -DCMAKE_INSTALL_PREFIX=/home/aimo/amr_ws/install/my_slam
+[0.283s] Invoking command in '/home/aimo/amr_ws/build/my_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aimo/amr_ws/build/my_slam -- -j20 -l20
+[0.301s] Invoked command in '/home/aimo/amr_ws/build/my_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aimo/amr_ws/build/my_slam -- -j20 -l20
+[0.306s] Invoking command in '/home/aimo/amr_ws/build/my_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aimo/amr_ws/build/my_slam
+[0.309s] -- Install configuration: ""
+[0.309s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/behavior_tree
+[0.309s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/behavior_tree/bt_to_pose.xml
+[0.309s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/behavior_tree/bt_through_poses.xml
+[0.309s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/launch
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/cmdvel_to_ackermann.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/my_amr_navigation.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/slam_mapping.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/launch/new_map.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/params
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/params/load_map.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/params/my_amr_param.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/params/carter_navigation_params.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/maps
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/maps/carter_warehouse_navigation.pmg
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/maps/carter_warehouse_navigation.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/maps/carter_warehouse_navigation.png
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/carter_navigation.rviz
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/carter_navigation_namespaced.rviz
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/my_navigation.rviz
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/rviz2/mapping.rviz
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/config
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/config/mapper_params_online_async.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/config/amcl.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/config/mapper_params_online_async_carter.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/config/new_map_config.yaml
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/samples
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/samples/carter_navigation.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/samples/point_cloud_to_scan.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/samples/bringup_launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/samples/nav2.launch.py
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/usd
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/usd/amr_map.usd
+[0.310s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/usd/nova_carter.usd
+[0.312s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/usd/ackman_new.usd
+[0.312s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/package_run_dependencies/my_slam
+[0.313s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/parent_prefix_path/my_slam
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/environment/ament_prefix_path.sh
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/environment/ament_prefix_path.dsv
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/environment/path.sh
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/environment/path.dsv
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/local_setup.bash
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/local_setup.sh
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/local_setup.zsh
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/local_setup.dsv
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/package.dsv
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/packages/my_slam
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/cmake/my_slamConfig.cmake
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/cmake/my_slamConfig-version.cmake
+[0.314s] -- Installing: /home/aimo/amr_ws/install/my_slam/share/my_slam/package.xml
+[0.314s] Invoked command in '/home/aimo/amr_ws/build/my_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aimo/amr_ws/build/my_slam
