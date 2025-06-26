@@ -25,6 +25,7 @@
 /home/aimo/amr_ws/install/my_slam/share/my_slam/usd/amr_map.usd
 /home/aimo/amr_ws/install/my_slam/share/my_slam/usd/nova_carter.usd
 /home/aimo/amr_ws/install/my_slam/share/my_slam/usd/ackman_new.usd
+/home/aimo/amr_ws/install/my_slam/share/my_slam/usd/ackermann_vely.usd
 /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/package_run_dependencies/my_slam
 /home/aimo/amr_ws/install/my_slam/share/ament_index/resource_index/parent_prefix_path/my_slam
 /home/aimo/amr_ws/install/my_slam/share/my_slam/environment/ament_prefix_path.sh
