@@ -23,6 +23,10 @@ def generate_launch_description():
         "map",
         default=os.path.join(
             get_package_share_directory("my_slam"), "maps", "carter_warehouse_navigation.yaml"
+            # get_package_share_directory("my_slam"), "maps", "carter_office_navigation.yaml"
+            # get_package_share_directory("my_slam"), "maps", "carter_hospital_navigation.yaml"
+
+            
         ),
     )
 

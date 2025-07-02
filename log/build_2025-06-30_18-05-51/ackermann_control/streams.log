@@ -1,0 +1,21 @@
+[0.277s] Invoking command in '/home/aimo/amr_ws/src/ackermannControllerPackage-ROS2/ackermann_control': PYTHONPATH=/home/aimo/amr_ws/build/ackermann_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aimo/amr_ws/install/ackermann_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ackermann_control build --build-base /home/aimo/amr_ws/build/ackermann_control/build install --record /home/aimo/amr_ws/build/ackermann_control/install.log --single-version-externally-managed install_data
+[0.377s] running egg_info
+[0.377s] writing ../../../build/ackermann_control/ackermann_control.egg-info/PKG-INFO
+[0.377s] writing dependency_links to ../../../build/ackermann_control/ackermann_control.egg-info/dependency_links.txt
+[0.377s] writing entry points to ../../../build/ackermann_control/ackermann_control.egg-info/entry_points.txt
+[0.378s] writing requirements to ../../../build/ackermann_control/ackermann_control.egg-info/requires.txt
+[0.378s] writing top-level names to ../../../build/ackermann_control/ackermann_control.egg-info/top_level.txt
+[0.378s] reading manifest file '../../../build/ackermann_control/ackermann_control.egg-info/SOURCES.txt'
+[0.378s] writing manifest file '../../../build/ackermann_control/ackermann_control.egg-info/SOURCES.txt'
+[0.378s] running build
+[0.378s] running build_py
+[0.378s] running install
+[0.378s] running install_lib
+[0.378s] running install_data
+[0.378s] running install_egg_info
+[0.379s] removing '/home/aimo/amr_ws/install/ackermann_control/lib/python3.10/site-packages/ackermann_control-0.0.0-py3.10.egg-info' (and everything under it)
+[0.380s] Copying ../../../build/ackermann_control/ackermann_control.egg-info to /home/aimo/amr_ws/install/ackermann_control/lib/python3.10/site-packages/ackermann_control-0.0.0-py3.10.egg-info
+[0.380s] running install_scripts
+[0.390s] Installing ackermann_control script to /home/aimo/amr_ws/install/ackermann_control/lib/ackermann_control
+[0.390s] writing list of installed files to '/home/aimo/amr_ws/build/ackermann_control/install.log'
+[0.401s] Invoked command in '/home/aimo/amr_ws/src/ackermannControllerPackage-ROS2/ackermann_control' returned '0': PYTHONPATH=/home/aimo/amr_ws/build/ackermann_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aimo/amr_ws/install/ackermann_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/ackermann_control build --build-base /home/aimo/amr_ws/build/ackermann_control/build install --record /home/aimo/amr_ws/build/ackermann_control/install.log --single-version-externally-managed install_data

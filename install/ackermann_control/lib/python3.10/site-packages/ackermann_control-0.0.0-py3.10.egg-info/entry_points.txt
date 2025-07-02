@@ -1,0 +1,3 @@
+[console_scripts]
+ackermann_control = ackermann_control.ackermann_control:main
+
