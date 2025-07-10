@@ -1,10 +1,3 @@
-## Copyright (c) 2024, NVIDIA CORPORATION. All rights reserved.
-## NVIDIA CORPORATION and its licensors retain all intellectual property
-## and proprietary rights in and to this software, related documentation
-## and any modifications thereto.  Any use, reproduction, disclosure or
-## distribution of this software and related documentation without an express
-## license agreement from NVIDIA CORPORATION is strictly prohibited.
-
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -13,6 +6,9 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+# import py_trees
+# import py_trees_ros.viewer as py_trees_viewer
+
 
 
 def generate_launch_description():
@@ -22,9 +18,22 @@ def generate_launch_description():
     map_dir = LaunchConfiguration(
         "map",
         default=os.path.join(
-            get_package_share_directory("my_slam"), "maps", "carter_warehouse_navigation.yaml"
+            # get_package_share_directory("my_slam"), "maps", "carter_warehouse_navigation.yaml"
+            # get_package_share_directory("my_slam"), "maps", "new_map.yaml"
+            get_package_share_directory("my_slam"), "maps", "slam_map.yaml"
+
         ),
     )
+#     # Create your behavior tree
+#     root = py_trees.composites.Sequence("MyTree")
+#     # ... (add nodes)
+
+# # Start the viewer (publishes BT structure to ROS 2)
+#     py_trees_viewer.display_tree(
+#         root,  # Your BT root
+#         namespace="/behaviour_tree",  # ROS 2 namespace
+#         with_blackboard_variables=True  # Optional: show variables
+#     )
 
     param_dir = LaunchConfiguration(
         "params_file",
@@ -35,6 +44,8 @@ def generate_launch_description():
 
 
     nav2_bringup_launch_dir = os.path.join(get_package_share_directory("nav2_bringup"), "launch")
+    ackermann_launch_dir = os.path.join(get_package_share_directory("cmdvel_to_ackermann"), "launch")
+
 
     rviz_config_dir = os.path.join(get_package_share_directory("my_slam"), "rviz2", "my_navigation.rviz")
 
@@ -53,6 +64,10 @@ def generate_launch_description():
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([nav2_bringup_launch_dir, "/bringup_launch.py"]),
+                launch_arguments={"map": map_dir, "use_sim_time": use_sim_time,"params_file": param_dir}.items(),
+            ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([ackermann_launch_dir, "/cmdvel_to_ackermann.launch.py"]),
                 launch_arguments={"map": map_dir, "use_sim_time": use_sim_time,"params_file": param_dir}.items(),
             ),
 
