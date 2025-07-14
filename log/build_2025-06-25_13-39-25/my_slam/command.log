@@ -1,4 +1,0 @@
-Invoking command in '/home/aimo/amr_ws/build/my_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aimo/amr_ws/build/my_slam -- -j20 -l20
-Invoked command in '/home/aimo/amr_ws/build/my_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/aimo/amr_ws/build/my_slam -- -j20 -l20
-Invoking command in '/home/aimo/amr_ws/build/my_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aimo/amr_ws/build/my_slam
-Invoked command in '/home/aimo/amr_ws/build/my_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/aimo/amr_ws/build/my_slam

@@ -1,2 +1,0 @@
-Invoking command in '/home/aimo/amr_ws/build/isaac_ros_common': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/aimo/amr_ws/src/isaac_ros_common/isaac_ros_common -DCMAKE_INSTALL_PREFIX=/home/aimo/amr_ws/install/isaac_ros_common
-Invoked command in '/home/aimo/amr_ws/build/isaac_ros_common' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/aimo/amr_ws/src/isaac_ros_common/isaac_ros_common -DCMAKE_INSTALL_PREFIX=/home/aimo/amr_ws/install/isaac_ros_common
