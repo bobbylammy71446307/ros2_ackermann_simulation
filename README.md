@@ -10,3 +10,9 @@ This package requires ROS dependencies to be installed before building.
    sudo rosdep init
    rosdep update
 
+2. Install dependencies
+   ```bash
+   rosdep install --from-paths src --ignore-src -y
+3. Install ackermann message type
+   ```bash
+   sudo apt-get install ros-humble-ackermann-msgs
