@@ -1,9 +1,11 @@
-<root main_tree_to_execute="MainTree">
+<root BTCPP_format="4" main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
-    <RecoveryNode number_of_retries="3" name="NavigateRecovery">
+    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
       <PipelineSequence>
+        <ControllerSelector selected_controller="{selected_controller}" default_controller="FollowPath" topic_name="controller_selector"/>
+        <PlannerSelector selected_planner="{selected_planner}" default_planner="GridBased" topic_name="planner_selector"/>
         <RateController hz="1.0" name="RateControllerComputePathToPose">
-          <RecoveryNode number_of_retries="3" name="RecoveryComputePathToPose">
+          <RecoveryNode number_of_retries="1" name="RecoveryComputePathToPose">
             <Fallback name="FallbackComputePathToPose">
               <ReactiveSequence name="CheckIfNewPathNeeded">
                 <Inverter>
@@ -11,13 +13,13 @@
                 </Inverter>
                 <IsPathValid path="{path}"/>
               </ReactiveSequence>
-              <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+              <ComputePathToPose goal="{goal}" path="{path}" planner_id="{selected_planner}" error_code_id="{compute_path_error_code}"/>
             </Fallback>
             <ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>
           </RecoveryNode>
         </RateController>
-        <RecoveryNode number_of_retries="3" name="RecoveryFollowPath">
-          <FollowPath path="{path}" controller_id="FollowPath"/>
+        <RecoveryNode number_of_retries="1" name="RecoveryFollowPath">
+          <FollowPath path="{path}" controller_id="{selected_controller}" error_code_id="{follow_path_error_code}"/>
           <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
         </RecoveryNode>
       </PipelineSequence>
@@ -28,7 +30,9 @@
             <ClearEntireCostmap name="ClearLocalCostmap-Subtree" service_name="local_costmap/clear_entirely_local_costmap"/>
             <ClearEntireCostmap name="ClearGlobalCostmap-Subtree" service_name="global_costmap/clear_entirely_global_costmap"/>
           </Sequence>
-          <Wait name="WaitRecovery" wait_duration="1"/>
+          <Wait name="WaitRecovery" wait_duration="1.0"/>
+          <BackUp name="BackUpRecovery" backup_dist="0.30" backup_speed="0.15"/>
+          <ComputePathToPose goal="{goal}" path="{path}" planner_id="{selected_planner}"/>
         </RoundRobin>
       </ReactiveFallback>
     </RecoveryNode>

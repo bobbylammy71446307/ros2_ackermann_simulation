@@ -4,7 +4,7 @@ project(my_slam)
 find_package(ament_cmake REQUIRED)
 
 install(DIRECTORY
-  behavior_tree
+  behavior_trees
   launch
   params
   maps
