@@ -10,7 +10,6 @@ install(DIRECTORY
   maps
   rviz2
   config
-  samples
   usd
   DESTINATION share/${PROJECT_NAME})
 
